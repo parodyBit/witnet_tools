@@ -77,7 +77,7 @@ class Address:
 
         change = int(abs(value_owed))
         if change > 0:
-            to.append({'address': self.address, 'timelock': 0, 'amount': change})
+            to.append({'address': self.address, 'time_lock': 0, 'value': change})
             change = 0
 
         inputs, outputs = [], []
