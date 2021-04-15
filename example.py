@@ -15,6 +15,7 @@ from wit.witnet.transactions import value_transfer
 node_client = NodeClient(ipv4='12.0.0.1', port=21338)
 
 # All examples will use these test vectors
+
 test_xprv_str = 'xprv1qpujxsyd4hfu0dtwa524vac84e09mjsgnh5h9crl8wrqg58z5wmsuqqcxlqmar3fjhkprndzkpnp2xlze76g4hu7g7c4r4r2m2e6y8xlvu566tn6'
 
 test_mnemonic = 'abandon abandon abandon abandon abandon abandon ' \
@@ -57,8 +58,6 @@ def basic_node_send_vtt_example():
     if real_transaction:
         print(transaction.to_json())
         print('Sending Value Transfer Transaction:', transaction_id)
-        # any address can send a transaction. the address does not sign just a pass through.
-
         response = node_client.inventory(inventory_item=transaction)
         print(response, transaction.transaction_id)
 
